@@ -1,0 +1,52 @@
+#YALMルール https://qiita.com/xuwenzhen/items/b01f78525626b3e87d23
+
+version: '3.8'
+
+service: 
+  go_blog: 
+    container_name: go_blog
+    buld:
+      context: ./build/app
+      dockerfile: dockerfile
+    tty: true
+    ports: 
+      - 8080:800
+    env_file:
+      - ./build/db/.env
+    depends_on: 
+      ^db
+    volumes:
+     -type: bind
+     source: .
+     target: /go/app
+    networks:
+      - golang_test_network
+
+db:
+  container_name: db
+  build:
+    context: ./build/db
+    dockerfile: Dockerfile
+  tty: true
+  platform: linux/amd64
+  ports:
+    - 3306:3306
+  env_file:
+    - ./build/db/.env
+  volumes:
+    - type: volume
+      source: mysql_test_volume
+      target: /var/lib/mysql
+    - type: bind
+      source: ./build/db/init
+      target: /docker-entrypoint-initdb.d
+  networks:
+    - golang_test_network
+
+volumes:
+  mysql_test_volume:
+    name: mysql_test_volume
+
+networks:
+  golang_test_network:
+    external: true
