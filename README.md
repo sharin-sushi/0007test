@@ -18,23 +18,17 @@ Vtuber本人も自身の歌枠の中身を把握し、活動に役立てられ�
 
 ## 技術
 
-<image src="https://github.com/sharin-sushi/0007test/assets/127638412/14f05973-82d1-43af-8220-f07f08ae2c99" width="250px"/>
-
-<image src="https://github.com/sharin-sushi/0007test/assets/127638412/95af232d-d540-4164-9eeb-6b79f7eff301" width="250px"/>
-
-<image src="https://github.com/sharin-sushi/0007test/assets/127638412/0e859016-97c0-4f1c-bc9a-a99a9de40997" width="250px"/>
-
-<image src="https://github.com/sharin-sushi/0007test/assets/127638412/974608bf-3f6b-46d1-9800-48d745c45c2f" width="250px"/>
+### webアプリ主要ページ紹介
+| TOP | 全歌一覧 | V個別 | データ入力 |
+|---|---|---|---|
+|<image src="https://github.com/sharin-sushi/0007test/assets/127638412/974608bf-3f6b-46d1-9800-48d745c45c2f" width="220px"/>|<image src="https://github.com/sharin-sushi/0007test/assets/127638412/95af232d-d540-4164-9eeb-6b79f7eff301" width="220px"/>|<image src="https://github.com/sharin-sushi/0007test/assets/127638412/0e859016-97c0-4f1c-bc9a-a99a9de40997" width="220px"/>|<image src="https://github.com/sharin-sushi/0007test/assets/127638412/14f05973-82d1-43af-8220-f07f08ae2c99" width="220px"/> |
 
 
 <br/>
-<image src="https://github.com/sharin-sushi/0007test/assets/127638412/14f05973-82d1-43af-8220-f07f08ae2c99" width="220px"/>
 
-<image src="https://github.com/sharin-sushi/0007test/assets/127638412/95af232d-d540-4164-9eeb-6b79f7eff301" width="220px"/>
 
-<image src="https://github.com/sharin-sushi/0007test/assets/127638412/0e859016-97c0-4f1c-bc9a-a99a9de40997" width="220px"/>
 
-<image src="https://github.com/sharin-sushi/0007test/assets/127638412/974608bf-3f6b-46d1-9800-48d745c45c2f" width="220px"/>
+
 
 
 ### 使用技術
