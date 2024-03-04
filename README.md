@@ -18,9 +18,9 @@ Vtuber本人も自身の歌枠の中身を把握し、活動に役立てられ�
 
 ## 技術
 
-<image src="https://github.com/sharin-sushi/0007test/assets/127638412/14f05973-82d1-43af-8220-f07f08ae2c99" width="300px"/>
+<image src="https://github.com/sharin-sushi/0007test/assets/127638412/14f05973-82d1-43af-8220-f07f08ae2c99" width="250px"/>
 
-<image src="https://github.com/sharin-sushi/0007test/assets/127638412/95af232d-d540-4164-9eeb-6b79f7eff301" width="300px"/>
+<image src="https://github.com/sharin-sushi/0007test/assets/127638412/95af232d-d540-4164-9eeb-6b79f7eff301" width="250px"/>
 
 <image src="https://github.com/sharin-sushi/0007test/assets/127638412/0e859016-97c0-4f1c-bc9a-a99a9de40997" width="300px"/>
 
