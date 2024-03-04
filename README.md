@@ -1,49 +1,51 @@
 # V-kara(VTuber-Karaoke-Lists)
 
 `「推し」の「歌枠」の聴きたい「歌」` </br>
-`「ささっと把握」、「さくっと再生」、「ばばっと布教」`
+`「把握」、「再生」、「布教」をシームレスに`
 
-## 作成した目的
+## __1. 使用感__
 
-　youtubeでは配信者がカラオケをする「歌枠」という動画がある。
-
-しかし、`何の歌`が`どの動画`にあって、`何分何秒目`なのか分からない。
- 
-「あの時のあの歌をまた聴きたい」を叶える。
-
-Vtuber本人も自身の歌枠の中身を把握し、活動に役立てられる。  
-
-  サイトリンク：[V-kara](https://v-karaoke.com) <br/>
-  サイトデモ動画：[YouTubeリンク](https://youtu.be/HunsO-8Eo7Q)
-
-## 技術
+### 概要
+- サイト:[V-kara](https://v-karaoke.com)
+V-karaはVTuber(YouTuberの1種)の歌枠の歌情報を登録し、いつでも見返せるwebアプリです。　<br>
+歌枠というのは配信者のカラオケ配信みたいなもので、`どの配信の何分何秒に何を歌ったか`の把握が難しいです。<br>
+V-karaを使うことで、好きなVTuberが何を歌ったかを検索、視聴、布教までシームレスに実施できます。<br>
+ただし、歌情報はユーザーによる入力が必要となり、ユーザー同士で作り上げるDBのような形式になっています。<br>
+※ゲストログイン可能です。使用感だけでも試してみてください！<br>
+- リポジトリ:[GitHub](https://github.com/sharin-sushi/V-Kara-Lists)<br>
+- サイトデモ動画:[YouTube](https://youtu.be/HunsO-8Eo7Q)<br>
 
 ### webアプリ主要ページ紹介
+- ※各VTuber個別はURLが個別生成されるため、そのままブクマや布教できます 
+
 | TOP | 全歌一覧 | V個別 | データ入力 |
 |---|---|---|---|
-|<image src="https://github.com/sharin-sushi/0007test/assets/127638412/974608bf-3f6b-46d1-9800-48d745c45c2f" width="220px"/>|<image src="https://github.com/sharin-sushi/0007test/assets/127638412/95af232d-d540-4164-9eeb-6b79f7eff301" width="220px"/>|<image src="https://github.com/sharin-sushi/0007test/assets/127638412/0e859016-97c0-4f1c-bc9a-a99a9de40997" width="220px"/>|<image src="https://github.com/sharin-sushi/0007test/assets/127638412/14f05973-82d1-43af-8220-f07f08ae2c99" width="220px"/> |
+|<image src="https://github.com/sharin-sushi/0007test/assets/127638412/9f8224bc-28d1-4355-92cc-17d90e113192" width="220px"/>|<image src="https://github.com/sharin-sushi/0007test/assets/127638412/d219a34f-e00a-4031-88b7-fb2f6f31005b" width="220px"/>|<image src="https://github.com/sharin-sushi/0007test/assets/127638412/76243bc6-be19-4054-b7ce-ea91da0692ca" width="220px"/>|<image src="https://github.com/sharin-sushi/0007test/assets/127638412/822e3f3a-d532-4c9f-8806-9bc6a6582462" width="220px"/>|
 
+- レスポンシブ対応です。
 
-<br/>
+| 通常画面 | ハンバーガーメニュー |
+|:-:|:-:|
+|<image src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3566489/3874fe7c-36c3-5f69-07c1-8c4ecc007245.jpeg" width="220px"/>|<image src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3566489/1036975f-d152-15c0-bc9b-6cc5db332ec9.jpeg" width="220px"/>|
 
+<br>
 
-
-
-
-
+## __2. 技術__
 ### 使用技術
   
 | 言語、サービス  | フレームワーク/ライブラリ |
 | --- | --- |
 | Next.js v13.5.6 | TypeScript v5.1.6 <br> React v18.2.0 <br> react-hook-form v.7.47.0 <br/> react-select 5.7.7 <br> react-table 7.8.0 <Br> react-youtube 10.1.0 <br> |
-| Go v1.18  | GORM v1.25.4 <br> GIN v1.9.1 <br> go-sqlmock v1.5.1|
+| Go v1.18  | GORM v1.25.4 <br> GIN v1.9.1 <br> go-sqlmock v1.5.1 <br> godotenv v1.5.1|
 |MySQL v8.0.32| - |
 
-その他：AWS, Docker, Github,GitHub Acitons(CI), Postman, Figma, draw.io
+- その他
+  - AWS(Fargate on ECS, ECR, EC2, RDS, ALB, Route53, CloudWatch, VPC),
+  - Docker, Github,GitHub Acitons(CI), Postman, Figma(画面遷移図), draw.io(ER図, AWS構成図)
 
 ### 技術選定理由
 
-※前提：完全未経験の独学
+※前提：プログラミング、IT業界ともに未経験で独学で作りました
 
 - Go
   - 比較対象：JAVA、Ruby、Python等
@@ -74,42 +76,46 @@ Vtuber本人も自身の歌枠の中身を把握し、活動に役立てられ�
     アトミックデザインの考え方を適宜取り込みつつ`Reactの流儀`を模倣するに留め、機能ごとにフォルダ分けすることで既存コードを探し出しやすい構成にした。
     ページ構成やcssも関わってくることから学習初期段階でクリーンアーキテクチャや完璧なアトミックデザイン等を導入しても適切に運営するのは将来を通して開発コストが増加してしまうものと考えた。
 
-## 設計図
+### 構成図
 
-  ※初期案であり、変更が多いです。デプロイ時に更新予定です。
-| ER図 | 画面遷移図 main  | 画面遷移図 header/footer |
-| :---: | :---: | :---: |
-| [原寸画像](https://user-images.githubusercontent.com/127638412/273976430-29856108-a613-493e-b024-bb9ad7ac88d9.png) | [原寸画像](https://user-images.githubusercontent.com/127638412/273976533-1d5db155-c5a6-403c-95db-f05b6fefb3f0.png) | [原寸画像](https://user-images.githubusercontent.com/127638412/273976737-17eb88c9-dfb0-4a99-a5ba-bf909c268ada.png) |
-| ![80%](https://github.com/sharin-sushi/0016go_next_relation/assets/127638412/b3a57a97-41e3-42e4-882c-177a2e317127) | ![273976533-1d5db155-c5a6-403c-95db-f05b6fefb3f0](https://github.com/sharin-sushi/0016go_next_relation/assets/127638412/b4eda633-a6b4-4d30-b446-77a0062ad79a) | ![273976737-17eb88c9-dfb0-4a99-a5ba-bf909c268ada](https://github.com/sharin-sushi/0016go_next_relation/assets/127638412/71a4338f-84d3-4e7f-ab08-c5af83207308)|
+ER図 <br>
+<image src="" widtch="700px" /><br>
+
+画面遷移図 <br>
+<image src="" widtch="700px" /><br>
 
 AWS構成図 <br />
-<image src="https://github.com/sharin-sushi/V-Kara-Lists/blob/develop/AWS構成図.drawio.png" width="500px" /> <br />
+<image src="https://private-user-images.githubusercontent.com/127638412/309566577-51a5e274-cc19-4ceb-bf45-f8c454251180.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDk1NjMxODcsIm5iZiI6MTcwOTU2Mjg4NywicGF0aCI6Ii8xMjc2Mzg0MTIvMzA5NTY2NTc3LTUxYTVlMjc0LWNjMTktNGNlYi1iZjQ1LWY4YzQ1NDI1MTE4MC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwMzA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDMwNFQxNDM0NDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02YmE3NGNkZjg0NjA2ZjI1MmU5MzNiMDFiY2JkMzI0N2NkMTJjNTA0NzRjM2JmNjk2MTcyZTJhMDY5NGZmMzMyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.BmPlREKspYmY7xOyd9YsBZhqyH2Lwqf0x5-Rsds4IhY" width="700px" /> <br />
 - ※備考※
   - GitHub Actions CIは構築済みです。
   - GitHub Actions CD, apiのprivate subnet化にも取り組んでいます。
   - EC2インタンスは通常時停止です。 
 
-## 機能
-  - ログイン（ゲストログイン機能有り、JWT使用）、ログアウト、退会の機能
-  - 登録データを表やドロップダウンで閲覧できる
+### 機能概要
+  - 会員機能
+    - ログイン（ゲストログイン機能有り、JWT使用）、
+    - ログアウト
+    - 退会
+  - Vtubre(配信者)、歌枠(動画)、歌(その動画の何分何秒)といったデータを表やドロップダウンで閲覧できる
   - 表について(react-table)
     - 項目クリックでページ内動画再生 (react-youtube)
     - 項目クリックで動画へのリンクをコピー
     - 表にはページネーションやソート機能
     - 最近登録された50曲の表をtopページに配置
+    - ドロップダウンと連携し、検索や選択でfilterできる
   - いいね機能
-  - バリデーション(react-hook-form、goでも若干)
+  - バリデーション(react-hook-form、Goでも少し)
     - 会員登録、ログイン時：メアド、パスワード
     - データ登録時：Vtuber名、kana、紹介動画URL、歌枠動画タイトル、歌枠動画URL、曲名
-  - DB登録、編集、削除機能：Vtuber、動画(youtubeの歌枠)、歌の再生開始時間等(会員専用)
-　  - 登録, 編集時はプルダウンを使用し、楽に入力できるように(react-select)
+  - データ登録、編集、削除機能：Vtuber、動画、歌の再生開始時間等(会員専用)
+　  - 登録, 編集時はプルダウンを使用し、簡単に入力できるように(react-select)
     - マイページにて、自分の登録した情報の一覧を確認できる
   - DB流出時の被害減少
     - パスワード：bcryptでハッシュ化
     - メールアドレス：AESで暗号化
   - レスポンシブ対応(PC推奨) 
 
-## 機能詳細
+### 機能詳細
 
 - 機能要件
   - ログイン機能（ゲストログイン機能有り）、ログアウト機能
@@ -121,7 +127,7 @@ AWS構成図 <br />
     - 会員登録、ログイン：メアド、パスワード
     - データ登録：Vtuber名、kana、紹介動画URL、歌枠動画タイトル、歌枠動画URL、曲名
   - レスポンジシブ
-  - ブラウザ対応確認：Chrome, Opera,
+  - ブラウザ対応：Chrome, Opera, safari
 
 - 非機能要件
   - N+1問題対策：レコードが増えても発行されるSQLが増えないように設計
@@ -133,75 +139,4 @@ AWS構成図 <br />
   - クリーンアーキテクチャを採用し、拡張と修正をしやすく
   - https化 
 
---ver. 1.5--(知人にデバッグを兼ねて使用依頼、フィードバックを貰う)
-
-- 機能要件
-  - 削除、申請依頼
-
---ver. 2(Xで一般公開)--
-
-- 機能要件
-  - パスワード変更機能
-
-- 非機能要件
-  - 配信者に特別：厳正な会員登録(twitterと紐づけ？)、自身が関与するtableに対しては全権保持
-  - ログイン認証をセッション管理に
-  - 名前ﾖﾐｶﾞﾅ、ﾊﾟｽﾜｰﾄﾞ登録時に全角を半角に自動変換
-
----
-
-## マニュアル
-
- 自分の好きな配信者とその歌情報（動画と歌い出しの時間等）を登録できます。
- 歌情報については、登録情報の詳細ページで直接動画を再生することができます。  
-
-### 会員機能
-　- 歌情報登録
-　- 自分が登録した歌情報の編集
-
-※現状はゲストログイン機能を使用できます。
-
-### 非会員/会員共通機能
-- 歌情報の閲覧とページ内視聴
-
-### 主な用途
-- 自分で登録した歌を見返すこと
-- 布教
-- 歌った歌の把握
- 
----
-
-## 今後実装予定の機能
-
-(一般公開しながらのバージョンアップ)
-
---ver. 3--
-
-- 機能要件
-  - オリ曲、カバー曲のtable追加
-  - 類似サービス追加："鳴き声"、"名言/名言"、"お話"の
-  - お知らせ機能１：ログインした際に通知が届く。通知：フォロー関連の新規登録情報等
-  - 会員登録時に本人確認メール
-  - 配信者情報に項目追加：X, Fanbox, Booth, 画像
-  - 曲登録時に±30s以内のものがある場合に警告する
-  - url登録時の自動変換：youtubeでは1動画に複数種類のURLが有るが、`watch`のものしか汎用性が低い
-  ユーザーがどれを登録しても自動変換して``watch`へ統一
-  これにより、重複回避や、埋め込み再生時のエラー回避
-
-- 非機能要件
-  - 死活監視
-  - 定期的な自動バックアップ
-  - ロック機能？
-  - メンテナンス中はサービス停止とする
-
-  
---ver4--
-
-- X投稿機能
-- お知らせ機能２：新規動画をメールで？初期は１通送って、通知onを促す
-- 開発者のXs表示(機能追加、デバッグ等のお知らせ)
-- youtube apiを利用し、url入力で動画タイトル取得
-
---verX--
-
-- ブラックリスト登録(IP BAN?)
+今後の実装検討:issue
